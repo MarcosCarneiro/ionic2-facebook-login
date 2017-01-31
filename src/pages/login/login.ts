@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Facebook, NativeStorage } from 'ionic-native';
 import { NavController, NavParams } from 'ionic-angular';
+import { UserPage } from '../user/user';
 
 @Component({
   selector: 'page-login',
@@ -36,7 +37,7 @@ export class LoginPage {
           picture: user.picture
         })
         .then(function(){
-          nav.pop();
+          nav.push(UserPage);
         }, function (error) {
           console.log(error);
         })

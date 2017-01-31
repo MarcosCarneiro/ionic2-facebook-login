@@ -1,6 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
-import { Platform, Nav } from 'ionic-angular';
-import { StatusBar, Splashscreen, NativeStorage } from 'ionic-native';
+import { Component } from '@angular/core';
+import { Platform } from 'ionic-angular';
+import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { UserPage } from '../pages/user/user';
 import { LoginPage } from '../pages/login/login';
@@ -10,22 +10,12 @@ import { LoginPage } from '../pages/login/login';
 })
 export class MyApp {
 
-  @ViewChild(Nav) nav: Nav;
-  rootPage: any;
+  rootPage = UserPage;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {
 
-      let env = this;
-      NativeStorage.getItem('user')
-      .then( function (data) {
-        env.nav.push(UserPage);
-        Splashscreen.hide();
-      }, function (error) {
-        env.nav.push(LoginPage);
-        Splashscreen.hide();
-      });
-
+      Splashscreen.hide();
       StatusBar.styleDefault();
 
     });

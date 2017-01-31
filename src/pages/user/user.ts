@@ -25,17 +25,18 @@ export class UserPage {
       };
         env.userReady = true;
     }, function(error){
-      this.navCtrl.push(LoginPage);
+      env.navCtrl.push(LoginPage);
     });
   }
 
   doFbLogout(){
+    let env = this;
     Facebook.logout()
     .then(function(response) {
       NativeStorage.remove('user');
-      this.navCtrl.push(LoginPage);
+      env.navCtrl.push(LoginPage);
     }, function(error){
-      console.log(error);
+      env.user.name = "Erro: " + error;
     });
   }
 
