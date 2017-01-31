@@ -1,5 +1,5 @@
 {
-  "name": "ionic-hello-world",
+  "name": "ionic-app-base",
   "author": "Ionic Framework",
   "homepage": "http://ionicframework.com/",
   "private": true,
@@ -30,15 +30,5 @@
   "devDependencies": {
     "@ionic/app-scripts": "1.0.0",
     "typescript": "2.0.9"
-  },
-  "cordovaPlugins": [
-    "cordova-plugin-whitelist",
-    "cordova-plugin-statusbar",
-    "cordova-plugin-device",
-    "cordova-plugin-console",
-    "cordova-plugin-splashscreen",
-    "ionic-plugin-keyboard"
-  ],
-  "cordovaPlatforms": [],
-  "description": "ionic2-facebook-login: An Ionic project"
+  }
 }
